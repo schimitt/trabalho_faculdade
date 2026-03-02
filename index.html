@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensamento Computacional</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero" id="inicio">
+        <div class="hero-content fade-in">
+            <div class="icon-hero"><i class="fa-solid fa-brain"></i></div>
+            <h1>Pensamento Computacional</h1>
+            <p>Programar começa com a organização do raciocínio de forma lógica e sequencial. Descubra como estruturar suas ideias antes de escrever código.</p>
+            <a href="#estruturas" class="btn">Explorar Estruturas</a>
+        </div>
+    </header>
+
+    <section class="section-container fade-in">
+        <div class="section-header">
+            <h2>O que é Pensamento Computacional?</h2>
+            <p>A habilidade de quebrar problemas de forma estruturada, definindo regras e ordens de execução para alcançar um objetivo de forma eficiente.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card card-purple">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Raciocínio Lógico</h3>
+                <p>Analisar um problema e criar passos claros e sequenciais para a solução.</p>
+            </div>
+            <div class="card card-red">
+                <i class="fa-solid fa-code-branch"></i>
+                <h3>Tomada de Decisão</h3>
+                <p>Avaliar cenários e escolher caminhos diferentes com base em condições.</p>
+            </div>
+            <div class="card card-blue">
+                <i class="fa-solid fa-rotate-right"></i>
+                <h3>Repetição Inteligente</h3>
+                <p>Automatizar tarefas repetitivas até que uma condição seja satisfeita.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="estruturas" class="section-container fade-in">
+        <div class="section-header">
+            <div class="icon-section"><i class="fa-solid fa-code-merge"></i></div>
+            <h2>Estruturas Condicionais</h2>
+            <p>Usadas para que o programa tome decisões com base em condições (verdadeiro ou falso).</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card card-purple detailed-card">
+                <h3>IF (Se)</h3>
+                <p><strong>O que é?</strong> A estrutura mais básica de decisão. O código só executa se a condição for verdadeira.</p>
+                <p><strong>Quando usar?</strong> Quando você tem apenas uma regra a ser verificada e um único caminho extra a seguir.</p>
+                <div class="example-box">
+                    <strong>💡 Exemplo do Cotidiano:</strong>
+
+                    Se o alarme tocar, eu acordo. (Se não tocar, eu continuo dormindo, não há outra ação específica).
+                </div>
+                <div class="code-box">
+                    <pre><code>SE (alarme_tocar == VERDADEIRO) {
+    acordar()
+}</pre>
+                </div>
+            </div>
+
+            <div class="card card-red detailed-card">
+                <h3>IF / ELSE (Se / Senão)</h3>
+                <p><strong>O que é?</strong> Cria um caminho alternativo. Se a condição for verdadeira, faz X. Se for falsa, faz Y.</p>
+                <p><strong>Quando usar?</strong> Quando existem duas possibilidades claras e opostas para uma mesma situação.</p>
+                <div class="example-box">
+                    <strong>💡 Exemplo do Cotidiano:</strong>
+
+                    Se a padaria tiver pão francês, compro 5. Senão, compro pão de forma.
+                </div>
+                <div class="code-box">
+                    <pre><code>SE (tem_pao_frances == VERDADEIRO) {
+    comprar_pao(5)
+} SENÃO {
+    comprar_pao_forma()
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container fade-in">
+        <div class="section-header">
+            <div class="icon-section"><i class="fa-solid fa-rotate"></i></div>
+            <h2>Estruturas de Repetição</h2>
+            <p>Também chamadas de "loops", servem para executar o mesmo bloco de código várias vezes.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card card-purple detailed-card">
+                <h3>WHILE (Enquanto)</h3>
+                <p><strong>Explicação:</strong> Verifica a condição <em>antes</em> de executar. Pode ser que não execute nenhuma vez.</p>
+                <p><strong>Quando usar?</strong> Quando você não sabe quantas vezes vai precisar repetir, mas sabe a condição de parada.</p>
+                <div class="example-box">
+                    <strong>💡 Exemplo:</strong>
+
+                    Comer pipoca enquanto o balde não estiver vazio.
+                </div>
+                <div class="code-box">
+                    <pre><code>ENQUANTO (balde_vazio == FALSO) {
+    comer_pipoca()
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="card card-red detailed-card">
+                <h3>DO WHILE (Faça Enquanto)</h3>
+                <p><strong>Explicação:</strong> Executa a ação <em>primeiro</em>, depois verifica a condição. Garante que execute pelo menos uma vez.</p>
+                <p><strong>Quando usar?</strong> Quando a ação deve acontecer antes de saber se precisa continuar.</p>
+                <div class="example-box">
+                    <strong>💡 Exemplo:</strong>
+
+                    Tentar abrir um pote de vidro duro. Você tenta primeiro, depois vê se abriu.
+                </div>
+                <div class="code-box">
+                    <pre><code>FAÇA {
+    fazer_forca_na_tampa()
+} ENQUANTO (pote_aberto == FALSO)</code></pre>
+                </div>
+            </div>
+
+            <div class="card card-blue detailed-card">
+                <h3>FOR (Para)</h3>
+                <p><strong>Explicação:</strong> Você define um início, uma condição de fim e um passo (incremento).</p>
+                <p><strong>Quando usar?</strong> Quando você sabe exatamente o número de vezes que a repetição deve acontecer.</p>
+                <div class="example-box">
+                    <strong>💡 Exemplo:</strong>
+
+                    Subir uma escada de exatos 10 degraus.
+                </div>
+                <div class="code-box">
+                    <pre><code>PARA (degrau = 1; degrau <= 10; 
+degrau++) { 
+subir_degrau()
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container fade-in" style="margin-bottom: 80px;">
+        <div class="section-header">
+            <div class="icon-section"><i class="fa-solid fa-check-double"></i></div>
+            <h2>Conclusão</h2>
+        </div>
+
+        <div class="conclusion-box">
+            <div class="grid-2">
+                <div>
+                    <h4>Estruturas de Decisão</h4>
+                    <p>Fazem o código <strong>escolher</strong> qual caminho seguir com base em regras lógicas.</p>
+                </div>
+                <div>
+                    <h4>Estruturas de Repetição</h4>
+                    <p>Fazem o código <strong>voltar e repetir</strong> tarefas sem precisar reescrever as mesmas instruções.</p>
+                </div>
+            </div>
+            <hr>
+            <h4>A Essência da Lógica</h4>
+            <p>Programar não é sobre decorar códigos complexos, mas sim sobre organizar seus pensamentos em passos estruturados. Entendendo o <strong>Pensamento Computacional</strong>, você pode aprender qualquer linguagem de programação muito mais rápido!</p>
+        </div>
+
+         <section class="section-names fade-in" style="margin-bottom: 80px;">
+        <div class="section-header.names">
+            <div class="names-box">
+            <p>
+            <strong>Desenvolvedores:</strong>
+            Gabriel Mello/Enrico Schmitt
+            </p>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html></code>

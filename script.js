@@ -1,17 +1,48 @@
-// Efeito de fade-in ao rolar a página
-document.addEventListener("scroll", () => {
-    document.querySelectorAll(".fade-in").forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            el.style.opacity = 1;
-            el.style.transform = "translateY(0)";
-        }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    initializeFadeInAnimation();
+    initializeScrollSpy();
 });
 
-// Configuração inicial
-document.querySelectorAll(".fade-in").forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "all 0.8s ease-out";
-});
+function initializeFadeInAnimation() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function initializeScrollSpy() {
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const sections = document.querySelectorAll('.section-container, .hero');
+
+    window.addEventListener('scroll', () => {
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 100) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
